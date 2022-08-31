@@ -8,15 +8,11 @@ void setup() {
   // 初期化
   SwitchControlLibrary();
 
-  // 認識待ち
-  delay(10000);
-
-  // コントローラー選択は自動で認識される、そのあとのA
-  pushButton(Button::A);
-  pushButton(Button::A);
-  pushButton(Button::A);
-  pushButton(Button::A);
-  pushButton(Button::A);
+  // A連打してコントローラーを認識させる
+  for (int i = 0; i < 10; i++) {
+    pushButton(Button::A);
+    delay(100);
+  }
 
   // マクロ開始までのディレイ
   delay(2000);
